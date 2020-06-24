@@ -2,6 +2,21 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <NoWarn>1701;1702;1705;1591</NoWarn>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <AssemblyName>Extensions.DependencyInjection.Proxies</AssemblyName>
+        <PackageId>Extensions.DependencyInjection.Proxies</PackageId>
+        <Authors>Lima Technology Services;Fernando Luiz de Lima</Authors>
+        <Copyright>Copyright © Lima Technology Services;Fernando Luiz de Lima</Copyright>
+        <Description>Exposes some AOP (Aspect Oriented Programming) extensions which help registering and resolving proxies instead of concrete implementations through Microsoft built-in container with the main purpose of providing lazy loading/instantiation of resources.</Description>
+        <PackageProjectUrl>https://github.com/ffernandolima/extensions-dependency-injection</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/ffernandolima/extensions-dependency-injection</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageTags>DependencyInjection; Dependency Injection; dependency-injection; Proxies; Microsoft Built-In Container</PackageTags>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <Version>1.0.0</Version>
     </PropertyGroup>
 
     <ItemGroup>
