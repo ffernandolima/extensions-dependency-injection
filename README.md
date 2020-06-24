@@ -11,7 +11,6 @@ It is available on Nuget.
 ```
 Install-Package Extensions.DependencyInjection.Abstractions -Version 1.0.0
 Install-Package Extensions.DependencyInjection.Proxies -Version 1.0.0
-
 ```
 
 P.S.: There's no dependency between the packages. Which one has its own features.
