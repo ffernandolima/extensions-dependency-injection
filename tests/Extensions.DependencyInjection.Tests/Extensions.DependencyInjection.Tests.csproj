@@ -21,4 +21,10 @@
         <ProjectReference Include="..\..\src\Extensions.DependencyInjection.Proxies\Extensions.DependencyInjection.Proxies.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Update="appsettings.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
 </Project>
