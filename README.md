@@ -4,6 +4,11 @@ Exposes some dependency injection utilities including modularization.
 
 Also, exposes some AOP (Aspect Oriented Programming) extensions which help registering and resolving proxies instead of concrete implementations through Microsoft built-in container with the main purpose of providing lazy loading/instantiation of resources.
 
+ | Package | NuGet |
+ | ------- | ----- |
+ | Extensions.DependencyInjection.Abstractions | [![Nuget](https://img.shields.io/badge/nuget-v1.0.0-blue) ![Nuget](https://img.shields.io/nuget/dt/Extensions.DependencyInjection.Abstractions)](https://www.nuget.org/packages/Extensions.DependencyInjection.Abstractions/1.0.0) |
+ | Extensions.DependencyInjection.Proxies | [![Nuget](https://img.shields.io/badge/nuget-v1.0.0-blue) ![Nuget](https://img.shields.io/nuget/dt/Extensions.DependencyInjection.Proxies)](https://www.nuget.org/packages/Extensions.DependencyInjection.Proxies/1.0.0) |
+
 ## Installation
 
 It is available on Nuget.
