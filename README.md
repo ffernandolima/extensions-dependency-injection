@@ -14,7 +14,7 @@ Also, exposes some AOP (Aspect Oriented Programming) extensions which help regis
 It is available on Nuget.
 
 ```
-Extensions.DependencyInjection.Modules -Version 1.0.0
+Install-Package Extensions.DependencyInjection.Modules -Version 1.0.0
 Install-Package Extensions.DependencyInjection.Proxies -Version 1.0.0
 ```
 
