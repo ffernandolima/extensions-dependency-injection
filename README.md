@@ -56,7 +56,7 @@ The following code demonstrates basic usage of modules.
         }
     }
 
-    public class Startup : IStartup
+    public class Startup
     {
         public Startup(IConfiguration configuration, ILoggerFactory loggerFactory, IHostingEnvironment hostingEnvironment)
         {
@@ -115,7 +115,7 @@ The following code demonstrates basic usage of proxies.
         public string Execute() => $"Bar";
     }
 
-    public class Startup : IStartup
+    public class Startup
     {
         public Startup(IConfiguration configuration, ILoggerFactory loggerFactory, IHostingEnvironment hostingEnvironment)
         {
