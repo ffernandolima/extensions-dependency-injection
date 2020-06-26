@@ -1,5 +1,5 @@
 ﻿
-namespace Extensions.DependencyInjection
+namespace Extensions.DependencyInjection.Modules
 {
     public static class ModuleCollectionExtensions
     {

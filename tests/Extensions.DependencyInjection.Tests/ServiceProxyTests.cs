@@ -9,8 +9,13 @@ namespace Extensions.DependencyInjection.Tests
     {
         public override void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<IFooService>(provider => provider.CreateProxy<IFooService, FooService>());
-            services.AddTransient<IBarService>(provider => provider.CreateProxy<IBarService, BarService>());
+            // Many ways of registering services as proxies:
+            services.AddTransientProxy<IFooService, FooService>();
+            services.AddTransientProxy<IBarService, BarService>();
+
+            // Or:
+            // services.AddTransient<IFooService>(provider => provider.CreateProxy<IFooService, FooService>());
+            // services.AddTransient<IBarService>(provider => provider.CreateProxy<IBarService, BarService>());
         }
 
         [Fact]

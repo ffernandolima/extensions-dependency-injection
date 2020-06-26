@@ -17,8 +17,8 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\src\Extensions.DependencyInjection.Abstractions\Extensions.DependencyInjection.Abstractions.csproj" />
-        <ProjectReference Include="..\..\src\Extensions.DependencyInjection.Proxies\Extensions.DependencyInjection.Proxies.csproj" />
+      <ProjectReference Include="..\..\src\Extensions.DependencyInjection.Modules\Extensions.DependencyInjection.Modules.csproj" />
+      <ProjectReference Include="..\..\src\Extensions.DependencyInjection.Proxies\Extensions.DependencyInjection.Proxies.csproj" />
     </ItemGroup>
 
     <ItemGroup>

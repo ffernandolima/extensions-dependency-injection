@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace Extensions.DependencyInjection
+namespace Extensions.DependencyInjection.Modules
 {
     public class ModuleCollection : IModuleCollection, IModuleRegistry
     {

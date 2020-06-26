@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace Extensions.DependencyInjection
+namespace Extensions.DependencyInjection.Modules
 {
     public interface IModuleRegistry
     {

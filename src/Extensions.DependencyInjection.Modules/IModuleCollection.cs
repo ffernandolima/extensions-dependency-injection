@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace Extensions.DependencyInjection
+namespace Extensions.DependencyInjection.Modules
 {
     public interface IModuleCollection : IModuleRegistry
     {
