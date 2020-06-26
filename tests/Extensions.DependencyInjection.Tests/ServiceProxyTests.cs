@@ -13,9 +13,19 @@ namespace Extensions.DependencyInjection.Tests
             services.AddTransientProxy<IFooService, FooService>();
             services.AddTransientProxy<IBarService, BarService>();
 
+            // You can also provide an ImplementationFactory that will be used to create the service.
+            // services.AddTransientProxy<IFooService, FooService>(() => new FooService(new BarService()));
+            // services.AddTransientProxy<IBarService, BarService>(() => new BarService());
+
             // Or:
             // services.AddTransient<IFooService>(provider => provider.CreateProxy<IFooService, FooService>());
             // services.AddTransient<IBarService>(provider => provider.CreateProxy<IBarService, BarService>());
+
+            // You can also provide an ImplementationFactory that will be used to create the service.
+            // services.AddTransient<IFooService>(provider => provider.CreateProxy<IFooService, FooService>(() => new FooService(provider.GetService<IBarService>())));
+            // services.AddTransient<IBarService>(provider => provider.CreateProxy<IBarService, BarService>(() => new BarService()));
+
+            // All Lifetimes are available (Transient, Scoped and Singleton).
         }
 
         [Fact]
