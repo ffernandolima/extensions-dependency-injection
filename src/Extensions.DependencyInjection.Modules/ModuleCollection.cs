@@ -22,7 +22,6 @@ namespace Extensions.DependencyInjection.Modules
             if (modules == null)
             {
                 throw new ArgumentNullException(nameof(modules));
-
             }
 
             _modules = new List<IModuleRegistry>(modules);
