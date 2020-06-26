@@ -1,12 +1,12 @@
 # extensions-dependency-injection
 
-Exposes some dependency injection utilities including modularization.
+Exposes dependency injection modularization.
 
 Also, exposes some AOP (Aspect Oriented Programming) extensions which help registering and resolving proxies instead of concrete implementations through Microsoft built-in container with the main purpose of providing lazy loading/instantiation of resources.
 
  | Package | NuGet |
  | ------- | ----- |
- | Extensions.DependencyInjection.Abstractions | [![Nuget](https://img.shields.io/badge/nuget-v1.0.0-blue) ![Nuget](https://img.shields.io/nuget/dt/Extensions.DependencyInjection.Abstractions)](https://www.nuget.org/packages/Extensions.DependencyInjection.Abstractions/1.0.0) |
+ | Extensions.DependencyInjection.Modules | [![Nuget](https://img.shields.io/badge/nuget-v1.0.0-blue) ![Nuget](https://img.shields.io/nuget/dt/Extensions.DependencyInjection.Modules)](https://www.nuget.org/packages/Extensions.DependencyInjection.Modules/1.0.0) |
  | Extensions.DependencyInjection.Proxies | [![Nuget](https://img.shields.io/badge/nuget-v1.0.0-blue) ![Nuget](https://img.shields.io/nuget/dt/Extensions.DependencyInjection.Proxies)](https://www.nuget.org/packages/Extensions.DependencyInjection.Proxies/1.0.0) |
 
 ## Installation
@@ -14,7 +14,7 @@ Also, exposes some AOP (Aspect Oriented Programming) extensions which help regis
 It is available on Nuget.
 
 ```
-Install-Package Extensions.DependencyInjection.Abstractions -Version 1.0.0
+Extensions.DependencyInjection.Modules -Version 1.0.0
 Install-Package Extensions.DependencyInjection.Proxies -Version 1.0.0
 ```
 
@@ -135,9 +135,23 @@ The following code demonstrates basic usage of proxies.
                 throw new ArgumentNullException(nameof(services));
             }
 
-            // Register the services as proxies
-            services.AddTransient<IFooService>(provider => provider.CreateProxy<IFooService, FooService>());
-            services.AddTransient<IBarService>(provider => provider.CreateProxy<IBarService, BarService>());
+            // Many ways of registering services as proxies:
+            services.AddTransientProxy<IFooService, FooService>();
+            services.AddTransientProxy<IBarService, BarService>();
+
+            // You can also provide an ImplementationFactory that will be used to create the service.
+            // services.AddTransientProxy<IFooService, FooService>(() => new FooService(new BarService()));
+            // services.AddTransientProxy<IBarService, BarService>(() => new BarService());
+
+            // Or:
+            // services.AddTransient<IFooService>(provider => provider.CreateProxy<IFooService, FooService>());
+            // services.AddTransient<IBarService>(provider => provider.CreateProxy<IBarService, BarService>());
+
+            // You can also provide an ImplementationFactory that will be used to create the service.
+            // services.AddTransient<IFooService>(provider => provider.CreateProxy<IFooService, FooService>(() => new FooService(provider.GetService<IBarService>())));
+            // services.AddTransient<IBarService>(provider => provider.CreateProxy<IBarService, BarService>(() => new BarService()));
+
+            // All Lifetimes are available (Transient, Scoped and Singleton).
         }
     }
 
