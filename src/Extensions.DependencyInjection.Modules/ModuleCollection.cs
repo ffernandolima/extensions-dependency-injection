@@ -27,7 +27,7 @@ namespace Extensions.DependencyInjection.Modules
             _modules = new List<IModuleRegistry>(modules);
         }
 
-        public void Registry(IServiceCollection services, IConfiguration configuration = null, ILoggerFactory loggerFactory = null, IHostingEnvironment hostingEnvironment = null)
+        public void Registry(IServiceCollection services, IConfiguration configuration = null, ILoggerFactory loggerFactory = null, IHostEnvironment hostEnvironment = null)
         {
             if (services == null)
             {
@@ -36,7 +36,7 @@ namespace Extensions.DependencyInjection.Modules
 
             foreach (var module in _modules)
             {
-                module.Registry(services, configuration, loggerFactory, hostingEnvironment);
+                module.Registry(services, configuration, loggerFactory, hostEnvironment);
             }
         }
 

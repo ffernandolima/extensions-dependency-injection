@@ -1,4 +1,5 @@
 ﻿using Castle.DynamicProxy;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Diagnostics;
 
@@ -65,7 +66,7 @@ namespace Extensions.DependencyInjection.Proxies
                 }
                 else
                 {
-                    _service = (TService)_serviceProvider.GetServiceOrCreateInstance(typeof(TImplementation));
+                    _service = (TService)ActivatorUtilities.GetServiceOrCreateInstance(_serviceProvider, typeof(TImplementation));
                 }
             }
 

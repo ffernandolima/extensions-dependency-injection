@@ -8,6 +8,6 @@ namespace Extensions.DependencyInjection.Modules
     public interface IModuleRegistry
     {
         string ModuleName { get; }
-        void Registry(IServiceCollection services, IConfiguration configuration = null, ILoggerFactory loggerFactory = null, IHostingEnvironment hostingEnvironment = null);
+        void Registry(IServiceCollection services, IConfiguration configuration = null, ILoggerFactory loggerFactory = null, IHostEnvironment hostEnvironment = null);
     }
 }
