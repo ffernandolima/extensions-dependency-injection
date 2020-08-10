@@ -113,7 +113,7 @@ The following code demonstrates basic usage of service factory.
             var ackService = _bazServiceFactory.GetService(new object());
             var quxService = _bazServiceFactory.GetService(new object());
 
-            return Ok(result);
+            return Ok();
         }
     }
 ```
