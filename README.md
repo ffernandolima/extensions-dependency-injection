@@ -6,16 +6,16 @@ Also, exposes some AOP (Aspect Oriented Programming) extensions which help regis
 
  | Package | NuGet |
  | ------- | ----- |
- | Extensions.DependencyInjection.Modules | [![Nuget](https://img.shields.io/badge/nuget-v1.0.0-blue) ![Nuget](https://img.shields.io/nuget/dt/Extensions.DependencyInjection.Modules)](https://www.nuget.org/packages/Extensions.DependencyInjection.Modules/1.0.0) |
- | Extensions.DependencyInjection.Proxies | [![Nuget](https://img.shields.io/badge/nuget-v1.0.0-blue) ![Nuget](https://img.shields.io/nuget/dt/Extensions.DependencyInjection.Proxies)](https://www.nuget.org/packages/Extensions.DependencyInjection.Proxies/1.0.0) |
+ | Extensions.DependencyInjection.Modules | [![Nuget](https://img.shields.io/badge/nuget-v2.1.0-blue) ![Nuget](https://img.shields.io/nuget/dt/Extensions.DependencyInjection.Modules)](https://www.nuget.org/packages/Extensions.DependencyInjection.Modules/2.1.0) |
+ | Extensions.DependencyInjection.Proxies | [![Nuget](https://img.shields.io/badge/nuget-v2.1.0-blue) ![Nuget](https://img.shields.io/nuget/dt/Extensions.DependencyInjection.Proxies)](https://www.nuget.org/packages/Extensions.DependencyInjection.Proxies/2.1.0) |
 
 ## Installation
 
 It is available on Nuget.
 
 ```
-Install-Package Extensions.DependencyInjection.Modules -Version 1.0.0
-Install-Package Extensions.DependencyInjection.Proxies -Version 1.0.0
+Install-Package Extensions.DependencyInjection.Modules -Version 2.1.0
+Install-Package Extensions.DependencyInjection.Proxies -Version 2.1.0
 ```
 
 P.S.: There's no dependency between the packages. Which one has its own features.
@@ -30,7 +30,7 @@ The following code demonstrates basic usage of modules.
     {
         public string ModuleName => nameof(ServicesModule);
 
-        public void Registry(IServiceCollection services, IConfiguration configuration = null, ILoggerFactory loggerFactory = null, IHostingEnvironment hostingEnvironment = null)
+        public void Registry(IServiceCollection services, IConfiguration configuration = null, ILoggerFactory loggerFactory = null, IHostEnvironment hostEnvironment = null)
         {
             if (services == null)
             {
@@ -45,7 +45,7 @@ The following code demonstrates basic usage of modules.
     {
         public string ModuleName => nameof(MessagingModule);
 
-        public void Registry(IServiceCollection services, IConfiguration configuration = null, ILoggerFactory loggerFactory = null, IHostingEnvironment hostingEnvironment = null)
+        public void Registry(IServiceCollection services, IConfiguration configuration = null, ILoggerFactory loggerFactory = null, IHostEnvironment hostEnvironment = null)
         {
             if (services == null)
             {
@@ -58,16 +58,12 @@ The following code demonstrates basic usage of modules.
 
     public class Startup
     {
-        public Startup(IConfiguration configuration, ILoggerFactory loggerFactory, IHostingEnvironment hostingEnvironment)
+        public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-            LoggerFactory = loggerFactory;
-            HostingEnvironment = hostingEnvironment;
         }
 
         public IConfiguration Configuration { get; }
-        public ILoggerFactory LoggerFactory { get; }
-        public IHostingEnvironment HostingEnvironment { get; }
 
         public void ConfigureServices(IServiceCollection services)
         {
@@ -79,7 +75,7 @@ The following code demonstrates basic usage of modules.
             IModuleCollection moduleCollection = new ModuleCollection();
             moduleCollection.AddModule<ServicesModule>()
                             .AddModule<MessagingModule>()
-                            .Registry(services, Configuration, LoggerFactory, HostingEnvironment); // Configuration, LoggerFactory and HostingEnvironment are optional parameters.
+                            .Registry(services, Configuration); // Configuration, LoggerFactory and HostEnvironment are optional parameters.
         }
     }
 
@@ -117,16 +113,12 @@ The following code demonstrates basic usage of proxies.
 
     public class Startup
     {
-        public Startup(IConfiguration configuration, ILoggerFactory loggerFactory, IHostingEnvironment hostingEnvironment)
+        public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-            LoggerFactory = loggerFactory;
-            HostingEnvironment = hostingEnvironment;
         }
 
         public IConfiguration Configuration { get; }
-        public ILoggerFactory LoggerFactory { get; }
-        public IHostingEnvironment HostingEnvironment { get; }
 
         public void ConfigureServices(IServiceCollection services)
         {
