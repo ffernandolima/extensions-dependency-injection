@@ -18,7 +18,7 @@ namespace Extensions.DependencyInjection.Tests
             Services.AddTransient<IBazService, BazService>();
             Services.AddServiceFactory<IBazService, BazService>(); // No Impl factory
 
-            var factory = ServiceProvider.GetService<IServiceFactory<IBazService, BazService>>();
+            var factory = ServiceProvider.GetService<IServiceFactory<IBazService>>();
             var service = factory.GetService();
 
             Assert.NotNull(service);
@@ -35,7 +35,7 @@ namespace Extensions.DependencyInjection.Tests
             // Services.AddServiceFactory<IBazService, BazService>((object[] args) => new BazService()); // Receives args
             // Services.AddServiceFactory<IBazService, BazService>((IServiceProvider provider, object[] args) => new BazService()); // Receives ServiceProvider and args
 
-            var factory = ServiceProvider.GetService<IServiceFactory<IBazService, BazService>>();
+            var factory = ServiceProvider.GetService<IServiceFactory<IBazService>>();
             var service = factory.GetService();
 
             Assert.NotNull(service);
@@ -48,7 +48,7 @@ namespace Extensions.DependencyInjection.Tests
             Services.AddTransient<IBazService, BazService>();
             Services.AddServiceFactory<IBazService, BazService>((IServiceProvider provider, object[] args) => provider.GetServiceOrCreateInstance<IBazService>()); // Requires IBazService registration
 
-            var factory = ServiceProvider.GetService<IServiceFactory<IBazService, BazService>>();
+            var factory = ServiceProvider.GetService<IServiceFactory<IBazService>>();
             var service = factory.GetService();
 
             Assert.NotNull(service);
@@ -60,7 +60,7 @@ namespace Extensions.DependencyInjection.Tests
             Services.Clear();
             Services.AddServiceFactory<IBazService, BazService>((IServiceProvider provider, object[] args) => provider.GetServiceOrCreateInstance<BazService>()); // No matter IBazService was registered or not into DI container
 
-            var factory = ServiceProvider.GetService<IServiceFactory<IBazService, BazService>>();
+            var factory = ServiceProvider.GetService<IServiceFactory<IBazService>>();
             var service = factory.GetService();
 
             Assert.NotNull(service);
@@ -72,7 +72,7 @@ namespace Extensions.DependencyInjection.Tests
             Services.Clear();
             Services.AddServiceFactory<IAckService, AckService>((IServiceProvider provider, object[] args) => provider.CreateInstance<AckService>(args)); // IAckService must not be registered into DI container
 
-            var factory = ServiceProvider.GetService<IServiceFactory<IAckService, AckService>>();
+            var factory = ServiceProvider.GetService<IServiceFactory<IAckService>>();
             var service = factory.GetService(new object());
 
             Assert.NotNull(service);
@@ -85,7 +85,7 @@ namespace Extensions.DependencyInjection.Tests
             Services.AddLogging();
             Services.AddServiceFactory<IQuxService, QuxService>((IServiceProvider provider, object[] args) => provider.CreateInstance<QuxService>(args)); // IQuxService must not be registered into DI container
 
-            var factory = ServiceProvider.GetService<IServiceFactory<IQuxService, QuxService>>();
+            var factory = ServiceProvider.GetService<IServiceFactory<IQuxService>>();
             var service = factory.GetService(new object());
 
             Assert.NotNull(service);

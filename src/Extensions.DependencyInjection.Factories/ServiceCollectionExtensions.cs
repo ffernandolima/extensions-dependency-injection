@@ -14,6 +14,7 @@ namespace Extensions.DependencyInjection.Factories
                 throw new ArgumentNullException(nameof(services));
             }
 
+            services.AddSingleton<IServiceFactory<TService>>(provider => new ServiceFactory<TService, TImplementation>(provider));
             services.AddSingleton<IServiceFactory<TService, TImplementation>>(provider => new ServiceFactory<TService, TImplementation>(provider));
 
             return services;
@@ -35,6 +36,7 @@ namespace Extensions.DependencyInjection.Factories
                 implementationFactoryInternal = (IServiceProvider sp, object[] args) => implementationFactory.Invoke();
             }
 
+            services.AddSingleton<IServiceFactory<TService>>(provider => new ServiceFactory<TService, TImplementation>(provider, implementationFactoryInternal));
             services.AddSingleton<IServiceFactory<TService, TImplementation>>(provider => new ServiceFactory<TService, TImplementation>(provider, implementationFactoryInternal));
 
             return services;
@@ -56,6 +58,7 @@ namespace Extensions.DependencyInjection.Factories
                 implementationFactoryInternal = (IServiceProvider sp, object[] args) => implementationFactory.Invoke(args);
             }
 
+            services.AddSingleton<IServiceFactory<TService>>(provider => new ServiceFactory<TService, TImplementation>(provider, implementationFactoryInternal));
             services.AddSingleton<IServiceFactory<TService, TImplementation>>(provider => new ServiceFactory<TService, TImplementation>(provider, implementationFactoryInternal));
 
             return services;
@@ -70,6 +73,7 @@ namespace Extensions.DependencyInjection.Factories
                 throw new ArgumentNullException(nameof(services));
             }
 
+            services.AddSingleton<IServiceFactory<TService>>(provider => new ServiceFactory<TService, TImplementation>(provider, implementationFactory));
             services.AddSingleton<IServiceFactory<TService, TImplementation>>(provider => new ServiceFactory<TService, TImplementation>(provider, implementationFactory));
 
             return services;
