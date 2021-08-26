@@ -12,18 +12,18 @@ Also, exposes some AOP (Aspect Oriented Programming) extensions which help regis
 
  | Package | NuGet |
  | ------- | ----- |
- | Extensions.DependencyInjection.Factories | [![Nuget](https://img.shields.io/badge/nuget-v2.2.1-blue) ![Nuget](https://img.shields.io/nuget/dt/Extensions.DependencyInjection.Factories)](https://www.nuget.org/packages/Extensions.DependencyInjection.Factories/2.2.1) |
- | Extensions.DependencyInjection.Modules | [![Nuget](https://img.shields.io/badge/nuget-v2.2.1-blue) ![Nuget](https://img.shields.io/nuget/dt/Extensions.DependencyInjection.Modules)](https://www.nuget.org/packages/Extensions.DependencyInjection.Modules/2.2.1) |
- | Extensions.DependencyInjection.Proxies | [![Nuget](https://img.shields.io/badge/nuget-v2.2.1-blue) ![Nuget](https://img.shields.io/nuget/dt/Extensions.DependencyInjection.Proxies)](https://www.nuget.org/packages/Extensions.DependencyInjection.Proxies/2.2.1) |
+ | Extensions.DependencyInjection.Factories | [![Nuget](https://img.shields.io/badge/nuget-v2.3.0-blue) ![Nuget](https://img.shields.io/nuget/dt/Extensions.DependencyInjection.Factories)](https://www.nuget.org/packages/Extensions.DependencyInjection.Factories/2.3.0) |
+ | Extensions.DependencyInjection.Modules | [![Nuget](https://img.shields.io/badge/nuget-v2.3.0-blue) ![Nuget](https://img.shields.io/nuget/dt/Extensions.DependencyInjection.Modules)](https://www.nuget.org/packages/Extensions.DependencyInjection.Modules/2.3.0) |
+ | Extensions.DependencyInjection.Proxies | [![Nuget](https://img.shields.io/badge/nuget-v2.3.0-blue) ![Nuget](https://img.shields.io/nuget/dt/Extensions.DependencyInjection.Proxies)](https://www.nuget.org/packages/Extensions.DependencyInjection.Proxies/2.3.0) |
 
 ## Installation
 
 It is available on Nuget.
 
 ```
-Install-Package Extensions.DependencyInjection.Factories -Version 2.2.1
-Install-Package Extensions.DependencyInjection.Modules -Version 2.2.1
-Install-Package Extensions.DependencyInjection.Proxies -Version 2.2.1
+Install-Package Extensions.DependencyInjection.Factories -Version 2.3.0
+Install-Package Extensions.DependencyInjection.Modules -Version 2.3.0
+Install-Package Extensions.DependencyInjection.Proxies -Version 2.3.0
 ```
 
 P.S.: There's no dependency among the packages. Which one has its own features.
