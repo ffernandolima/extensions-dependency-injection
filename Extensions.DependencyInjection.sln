@@ -27,7 +27,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Extensions.DependencyInject
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Extensions.DependencyInjection.Modules", "src\Extensions.DependencyInjection.Modules\Extensions.DependencyInjection.Modules.csproj", "{D9A2B194-1950-4CF8-A003-BB390C7A5E64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Extensions.DependencyInjection.Factories", "src\Extensions.DependencyInjection.Factories\Extensions.DependencyInjection.Factories.csproj", "{2B4B8C12-9306-43FE-A375-AA476D751961}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Extensions.DependencyInjection.Factories", "src\Extensions.DependencyInjection.Factories\Extensions.DependencyInjection.Factories.csproj", "{2B4B8C12-9306-43FE-A375-AA476D751961}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{0C4DDAFF-69AB-4BD8-B1EA-B9144AD89E59}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{B1E2BD0E-7EDF-4F83-A18B-08861FB56593}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\build-and-publish.yml = .github\workflows\build-and-publish.yml
+		.github\workflows\build-and-tests.yml = .github\workflows\build-and-tests.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -60,6 +68,7 @@ Global
 		{348AB241-D2AD-4DBE-AD66-4E1320C60470} = {966F6F3F-DCC9-419E-9272-69BC4EF316E1}
 		{D9A2B194-1950-4CF8-A003-BB390C7A5E64} = {966F6F3F-DCC9-419E-9272-69BC4EF316E1}
 		{2B4B8C12-9306-43FE-A375-AA476D751961} = {966F6F3F-DCC9-419E-9272-69BC4EF316E1}
+		{B1E2BD0E-7EDF-4F83-A18B-08861FB56593} = {0C4DDAFF-69AB-4BD8-B1EA-B9144AD89E59}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A8266D0C-4B25-4DD7-8B28-EA3434ADC728}
