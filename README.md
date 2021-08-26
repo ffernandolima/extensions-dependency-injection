@@ -6,6 +6,10 @@ Exposes dependency injection modularization.
 
 Also, exposes some AOP (Aspect Oriented Programming) extensions which help registering and resolving proxies instead of concrete implementations through Microsoft built-in container with the main purpose of providing lazy loading/instantiation of resources.
 
+[![build-and-tests Workflow Status](https://github.com/ffernandolima/extensions-dependency-injection/actions/workflows/build-and-tests.yml/badge.svg?branch=master)](https://github.com/ffernandolima/extensions-dependency-injection/actions/workflows/build-and-tests.yml?branch=master)
+
+[![build-and-publish Workflow Status](https://github.com/ffernandolima/extensions-dependency-injection/actions/workflows/build-and-publish.yml/badge.svg?branch=master)](https://github.com/ffernandolima/extensions-dependency-injection/actions/workflows/build-and-publish.yml?branch=master)
+
  | Package | NuGet |
  | ------- | ----- |
  | Extensions.DependencyInjection.Factories | [![Nuget](https://img.shields.io/badge/nuget-v2.2.1-blue) ![Nuget](https://img.shields.io/nuget/dt/Extensions.DependencyInjection.Factories)](https://www.nuget.org/packages/Extensions.DependencyInjection.Factories/2.2.1) |
