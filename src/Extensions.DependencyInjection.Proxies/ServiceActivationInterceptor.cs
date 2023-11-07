@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Diagnostics;
+using System.Runtime.ExceptionServices;
 
 namespace Extensions.DependencyInjection.Proxies
 {
@@ -48,7 +49,7 @@ namespace Extensions.DependencyInjection.Proxies
                 {
                     if (ex.InnerException != null)
                     {
-                        throw ex.InnerException;
+                        ExceptionDispatchInfo.Capture(ex.InnerException).Throw();
                     }
 
                     throw new Exception($"An error has occurred while invoking {typeof(TService).Name}.{invocation.Method.Name}.", ex);
